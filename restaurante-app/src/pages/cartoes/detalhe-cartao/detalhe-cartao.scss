@@ -1,0 +1,46 @@
+// .container {
+//   margin: 50px;
+//   border: 2px solid black;
+//   display: flex;
+//   align-items: center;
+//   justify-content: ;
+// }
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.box {
+  flex: 1;
+  height: 65px;
+  width: 65px;
+  border: 2px solid black;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.box-right {
+  float: right;
+}
+
+.box-left {
+  float: left;
+}
+
+.marcado {
+  background-color: green;
+}
+
+ion-avatar {
+  height: 100px;
+   width: 100px;
+}
+
+.check-mark {
+  font-size: 4.2em;
+  color: green;
+}

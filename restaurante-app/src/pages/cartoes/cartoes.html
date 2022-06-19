@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Meus Cartões</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-list lines="none">
+		<ion-list-header>
+			<ion-label>Cartões</ion-label>
+		</ion-list-header>
+		<ion-item (click)="detalheCartao(cartao)" *ngFor="let cartao of cartoes">
+			<ion-icon slot="start" color="medium" name="restaurant">
+			</ion-icon>
+			<ion-label>{{cartao?.restaurante?.nome}} <app-barra-progresso [total]="cartao?.restaurante?.nmVisitaCartao" [parcial]="cartao?.nmVisitaAtual"></app-barra-progresso></ion-label>
+			
+		</ion-item>
+	</ion-list>
+</ion-content>

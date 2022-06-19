@@ -1,0 +1,40 @@
+<ion-header>
+	<ion-navbar>
+	  <button ion-button menuToggle>
+		<ion-icon name="menu"></ion-icon>
+	  </button>
+	  <ion-title>Meu Cartão</ion-title>
+	</ion-navbar>
+  </ion-header>
+
+<ion-content>
+	<div class="header">
+		<!-- <ion-avatar>
+			<img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=retro&f=y%22">
+		</ion-avatar> -->
+		<h1>{{cartao?.restaurante?.nome}}</h1>
+	</div>
+	<ion-grid>
+		<ion-row *ngFor="let visita of visitas, let i = index">
+			<ng-container *ngIf="i % 2 === 0">
+				<ion-col>
+					<div class="box-right">
+						<div class="box">
+								<!-- {{i + 1}} -->
+								<ion-icon class="check-mark" *ngIf="i + 1 <= cartao?.nmVisitaAtual" name="checkmark"></ion-icon>
+						</div>
+					</div>
+				</ion-col>
+				<ion-col>
+					<div class="box-left">
+						<div class="box">
+							<!-- {{i + 2}} -->
+							<ion-icon class="check-mark" *ngIf="i + 2 <= cartao?.nmVisitaAtual" name="checkmark"></ion-icon>
+						</div>
+					</div>
+				</ion-col>
+			</ng-container>
+		</ion-row>
+	</ion-grid>
+
+</ion-content>

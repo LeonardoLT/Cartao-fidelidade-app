@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Restaurantes</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-list lines="none">
+		<ion-list-header>
+        <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+			<!-- <ion-label>Cartões</ion-label> -->
+		</ion-list-header>
+    <ion-item *ngFor="let restaurante of restaurantes">
+			<ion-icon slot="start" color="medium" name="restaurant">
+			</ion-icon>
+      <ion-label (click)="detalheRestaurante(restaurante)" >{{restaurante?.nome}}</ion-label>
+      <button (click)="addRestaurante(restaurante.id)" ion-button color="secondary" outline icon-only item-end icon-start>
+        <ion-icon name='add-circle' is-active="false" ></ion-icon>
+      </button>
+		</ion-item>
+	</ion-list>
+</ion-content>
